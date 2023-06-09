@@ -71,6 +71,7 @@ void Board::newGame() {
     // Board string state
     boardString = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR";
     readString(boardString);
+    prevMove = '#';
 }
 
 // Update board current state
