@@ -13,18 +13,20 @@ private:
     static const int COLS = 8; //Standard Chess Board Size
 
     //Board array representation
-    int board[ROWS][COLS];
+    char white[ROWS][COLS];
+    char board[ROWS][COLS];
 
     //Board string representation
     std::string boardString;
 
-    //Keep track of the previous moves
-    int prevPiece;
-    int currPiece;
+    //Keep track of the previous move
+    int prevMove;
 
 public:
     Board();
-    void printBoard();
+    void printHumanVisualBoard();
+    void newGame();
+    void readString(std::string boardRepresentation);
 };
 
 #endif //CHESSGAME_BOARD_H

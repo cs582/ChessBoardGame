@@ -3,6 +3,7 @@
 
 int main() {
     Board board;
-    board.printBoard();
+    board.newGame();
+    board.printHumanVisualBoard();
     return 0;
 }
