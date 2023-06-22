@@ -1,8 +1,20 @@
 //
-// Created by Carlos Salas Flores on 6/8/23.
+// Created by Carlos Salas Flores on 6/16/23.
 //
 
-#ifndef CHESSGAME_PLAYER_H
-#define CHESSGAME_PLAYER_H
+#ifndef CHESSBOARDGAME_PLAYER_H
+#define CHESSBOARDGAME_PLAYER_H
 
-#endif //CHESSGAME_PLAYER_H
+#include "../include/Board.h"
+#include "../include/Piece.h"
+#include <SFML/Graphics.hpp>
+
+static const int MAX = 100;
+
+class Player {
+public:
+    char id;
+    Player(char);
+};
+
+#endif //CHESSBOARDGAME_PLAYER_H

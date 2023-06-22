@@ -1,32 +1,38 @@
 //
-// Created by Carlos Salas Flores on 6/8/23.
+// Created by Carlos Salas Flores on 6/16/23.
 //
 
-#ifndef CHESSGAME_BOARD_H
-#define CHESSGAME_BOARD_H
+#ifndef CHESSBOARDGAME_BOARD_H
+#define CHESSBOARDGAME_BOARD_H
 
 #include <string>
+#include <vector>
+#include "../include/Piece.h"
 
 class Board {
 private:
-    static const int ROWS = 8; //Standard Chess Board Size
-    static const int COLS = 8; //Standard Chess Board Size
+    char** grid;
+    int ROWS;
+    int COLS;
 
-    //Board array representation
-    char white[ROWS][COLS];
-    char board[ROWS][COLS];
+    std::vector<Piece> blackPieces;
+    std::vector<Piece> whitePieces;
 
-    //Board string representation
-    std::string boardString;
+    int totalBlack;
+    int totalWhite;
 
-    //Keep track of the previous move
-    int prevMove;
-
+    std::string str;
+    void boardToString();
+    void stringToBoard();
+    void createNewPiece(char, int, int);
+    void deletePiece(Piece);
+    void update();
 public:
-    Board();
-    void printHumanVisualBoard();
-    void newGame();
-    void readString(std::string boardRepresentation);
+    Board(int, int);
+    void setInitialSetup();
+    void showBoardInConsole();
+    int findPieceAt(int, int);
+    bool moveFromTo(int, int, int, int);
 };
 
-#endif //CHESSGAME_BOARD_H
+#endif //CHESSBOARDGAME_BOARD_H
